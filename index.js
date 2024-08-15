@@ -3,11 +3,13 @@ function genRandomNum(n = 100) {
 }
 
 
+// TODO: THE GUESS ATTEMPT IS OFF BY ONE
+
 function guessNumber(randomNum, attempts = 10) {
 
     let msg = ''
+    let total = attempts
     let guess = parseInt(prompt('Please guess a number from 1 to 100'))
-
     while (guess !== randomNum && attempts > 1) {
 
         if (isNaN(guess)) {
@@ -28,8 +30,8 @@ function guessNumber(randomNum, attempts = 10) {
         guess = parseInt(prompt('Please guess a number from 1 to 100'))
     }
 
-    return attempts > 1 ? `You guessed ${randomNum} correctly in ${attempts} attempts.` : 'You used all of your attempts, try again!'
+    return attempts > 1 ? `You guessed ${randomNum} correctly in ${total - attempts} attempts.` : 'You used all of your attempts, try again!'
 
-} 
+}
 
 window.alert(guessNumber(genRandomNum()))
