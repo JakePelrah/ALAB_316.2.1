@@ -30,6 +30,6 @@ function guessNumber(randomNum, attempts = 10) {
 
     return attempts > 1 ? `You guessed ${randomNum} correctly in ${attempts} attempts.` : 'You used all of your attempts, try again!'
 
-}23
+} 
 
 window.alert(guessNumber(genRandomNum()))
